@@ -5,4 +5,9 @@ import ReactDOM from 'react-dom'
 
 var element = <div>Hello World!</div>
 
+// Renders 'element' in the <div> tag with the id of 'root'
+// in the index.html file
 ReactDOM.render(element, document.getElementById('root'));
+
+// Print the element in the console of browser
+console.log(element);
