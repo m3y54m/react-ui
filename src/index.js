@@ -7,11 +7,9 @@ import ReactDOM from 'react-dom'
 // The following line can be included in your src/index.js or App.js file
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-var element = <button class="btn btn-danger">Hello World!</button>
+import { NavBar } from './App';
 
-// Renders 'element' in the <div> tag with the id of 'root'
+// Renders NavBar component in the <div> tag with the id of 'root'
 // in the index.html file
-ReactDOM.render(element, document.getElementById('root'));
+ReactDOM.render(<NavBar />, document.getElementById('root'));
 
-// Print the element in the console of browser
-console.log(element);
