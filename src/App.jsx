@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-export default class NavBar extends Component {
+class NavBar extends Component {
     render() {
         return (
             <React.Fragment>
@@ -10,3 +10,5 @@ export default class NavBar extends Component {
         );
     }
 }
+
+export default NavBar;
