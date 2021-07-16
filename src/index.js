@@ -7,7 +7,7 @@ import ReactDOM from 'react-dom'
 // The following line can be included in your src/index.js or App.js file
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-import { NavBar } from './App';
+import NavBar from './App';
 
 // Renders NavBar component in the <div> tag with the id of 'root'
 // in the index.html file
