@@ -3,7 +3,11 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 
-var element = <div>Hello World!</div>
+// Bootstrap CSS
+// The following line can be included in your src/index.js or App.js file
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+var element = <button class="btn btn-danger">Hello World!</button>
 
 // Renders 'element' in the <div> tag with the id of 'root'
 // in the index.html file
