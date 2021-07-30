@@ -12,7 +12,7 @@ class NavBar extends Component {
   render() {
     return (
       <React.Fragment>
-        <Navbar bg="dark" variant="dark" expand="lg">
+        <Navbar bg="dark" variant="dark" expand="lg" className="custom-navbar-bg">
           <Container>
             <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />

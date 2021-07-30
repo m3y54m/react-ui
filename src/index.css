@@ -2,3 +2,7 @@
 {
     background-color: #80c0b5;
 }
+
+.custom-navbar-bg {
+    background-color: rgb(64, 0, 110) !important;
+}
