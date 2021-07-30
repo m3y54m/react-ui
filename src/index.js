@@ -9,12 +9,13 @@ import "bootstrap/dist/css/bootstrap.min.css";
 // Custom CSS
 import "./index.css";
 
-import NavBar from "./App";
+// import App component from App.jsx file
+import App from "./App";
 
 // Renders NavBar component in the <div> tag with the id of 'root'
 // in the index.html file
 ReactDOM.render(
-    <NavBar />,
+    <App />,
     document.getElementById("root")
 );
 
