@@ -77,15 +77,7 @@ export default class MainContent extends Component {
                   <tr key={cust.id}>
                     <td>{cust.id}</td>
                     <td>{cust.name}</td>
-                    <td>
-                    {(() => { // Define immediately-invoked function expressions inside JSX
-                        if (cust.phone == null) {
-                          return <span className="bg-warning p-1 rounded">Not Available</span>;
-                        } else {
-                          return cust.phone;
-                        }
-                      })()}
-                    </td>
+                    <td>{this.getPhoneToRender(cust.phone)}</td>
                     <td>{cust.addr.city}</td>
                   </tr>
                 );
@@ -106,5 +98,13 @@ export default class MainContent extends Component {
     this.setState({
       customersCount: count
     })
+  }
+
+  getPhoneToRender(phone) {
+    if (phone == null) {
+      return <span className="bg-warning p-1 rounded">Not Available</span>;
+    } else {
+      return phone;
+    }
   }
 }
