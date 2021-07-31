@@ -15,6 +15,7 @@ export default class MainContent extends Component {
         id: 1,
         name: "Scott",
         phone: "123-456",
+        photo: "https://picsum.photos/seed/picsum/50/50",
         addr: {
           city: "New York"
         }
@@ -23,6 +24,7 @@ export default class MainContent extends Component {
         id: 2,
         name: "Wiscott",
         phone: null,
+        photo: "https://picsum.photos/seed/picsum/50/50",
         addr: {
           city: "Old York"
         }
@@ -31,6 +33,7 @@ export default class MainContent extends Component {
         id: 3,
         name: "Lescott",
         phone: "981-454",
+        photo: "https://picsum.photos/seed/picsum/50/50",
         addr: {
           city: "New Mexico"
         }
@@ -39,6 +42,7 @@ export default class MainContent extends Component {
         id: 4,
         name: "Discott",
         phone: "204-453",
+        photo: "https://picsum.photos/seed/picsum/50/50",
         addr: {
           city: "Old Mexico"
         }
@@ -64,6 +68,7 @@ export default class MainContent extends Component {
           <thead>
             <tr>
               <th>#</th>
+              <th>Photo</th>
               <th>Customer Name</th>
               <th>Phone</th>
               <th>Address</th>
@@ -104,6 +109,7 @@ export default class MainContent extends Component {
           /* Each child in a list should have a unique "key" prop. */
           <tr key={cust.id}>
             <td>{cust.id}</td>
+            <td><img src={cust.photo} alt="random"/></td>
             <td>{cust.name}</td>
             <td>{this.getPhoneToRender(cust.phone)}</td>
             <td>{cust.addr.city}</td>
