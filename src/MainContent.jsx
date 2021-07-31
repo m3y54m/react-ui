@@ -100,7 +100,8 @@ export default class MainContent extends Component {
     })
   }
 
-  getPhoneToRender(phone) {
+  // Convert this method a an Arrow Function
+  getPhoneToRender = (phone) => {
     if (phone == null) {
       return <span className="bg-warning p-1 rounded">Not Available</span>;
     } else {
