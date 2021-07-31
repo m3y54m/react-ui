@@ -77,7 +77,15 @@ export default class MainContent extends Component {
                   <tr key={cust.id}>
                     <td>{cust.id}</td>
                     <td>{cust.name}</td>
-                    <td>{cust.phone == null ? "Not Available" : cust.phone}</td>
+                    <td>
+                    {(() => { // Define immediately-invoked function expressions inside JSX
+                        if (cust.phone == null) {
+                          return "Not Available";
+                        } else {
+                          return cust.phone;
+                        }
+                      })()}
+                    </td>
                     <td>{cust.addr.city}</td>
                   </tr>
                 );
