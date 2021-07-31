@@ -80,7 +80,7 @@ export default class MainContent extends Component {
                     <td>
                     {(() => { // Define immediately-invoked function expressions inside JSX
                         if (cust.phone == null) {
-                          return "Not Available";
+                          return <span className="bg-warning p-1 rounded">Not Available</span>;
                         } else {
                           return cust.phone;
                         }
