@@ -2,10 +2,49 @@ import React from "react";
 import { Component } from "react";
 import { Badge } from "react-bootstrap";
 import { Button } from "react-bootstrap";
+import { Table } from "react-bootstrap";
+
 export default class MainContent extends Component {
 
   // dynamic content
-  state = { pageTitle: "Customers", customersCount: 5 }
+  state = {
+    pageTitle: "Customers",
+    customersCount: 5,
+    customers: [
+      {
+        id: 1,
+        name: "Scott",
+        phone: "123-456",
+        addr: {
+          city: "New York"
+        }
+      },
+      {
+        id: 2,
+        name: "Wiscott",
+        phone: "765-455",
+        addr: {
+          city: "Old York"
+        }
+      },
+      {
+        id: 3,
+        name: "Lescott",
+        phone: "981-454",
+        addr: {
+          city: "New Mexico"
+        }
+      },
+      {
+        id: 4,
+        name: "Discott",
+        phone: "204-453",
+        addr: {
+          city: "Old Mexico"
+        }
+      }
+    ]
+  }
 
   render() {
     return (
@@ -21,6 +60,31 @@ export default class MainContent extends Component {
             Refresh
           </Button>
         </h3>
+        <Table striped bordered hover>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Customer Name</th>
+              <th>Phone</th>
+              <th>Address</th>
+            </tr>
+          </thead>
+          <tbody>
+            {
+              this.state.customers.map((cust) => {
+                return (
+                  /* Each child in a list should have a unique "key" prop. */
+                  <tr key={cust.id}>
+                    <td>{cust.id}</td>
+                    <td>{cust.name}</td>
+                    <td>{cust.phone}</td>
+                    <td>{cust.addr.city}</td>
+                  </tr>
+                );
+              })
+            }
+          </tbody>
+        </Table>
       </div>
     );
   }
