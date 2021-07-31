@@ -88,9 +88,17 @@ export default class MainContent extends Component {
     );
   }
 
-  onTestClick = (cust) => {
+  // Method for updating photos
+  onTestClick = (cust, index) => {
     console.log(cust);
+    console.log(index);
+
+    // Use "index" to update state of the component
+    var custArr = this.state.customers;
+    custArr[index].photo = "https://picsum.photos/id/" + index + "/50/50"
+    this.setState({customers: custArr})
   }
+  
   // Executes when the user clicks on Refresh button
   // Study about Arrow Function in javascript
   onRefreshClick = () => {
@@ -113,7 +121,7 @@ export default class MainContent extends Component {
 
   getCustomerRows = () => {
     return (
-      this.state.customers.map((cust) => {
+      this.state.customers.map((cust, index) => {
         return (
           /* Each child in a list should have a unique "key" prop. */
           <tr key={cust.id}>
@@ -124,7 +132,7 @@ export default class MainContent extends Component {
                 <Button variant="secondary"
                   onClick={
                     /* Use Arrow-Function to be able to pass arguments to the onClick event handler method */
-                    () => {this.onTestClick(cust);}
+                    () => { this.onTestClick(cust, index); }
                   }>
                   Test
                 </Button>
