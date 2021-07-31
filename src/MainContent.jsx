@@ -26,7 +26,13 @@ export default class MainContent extends Component {
   }
 
   // Executes when the user clicks on Refresh button
-  onRefreshClick() {
+  // Study about Arrow Function in javascript
+  onRefreshClick = () => {
     console.log("Refresh clicked");
+    // "this" refers to the MainContent component
+    var count = this.state.customersCount + 1;
+    this.setState({
+      customersCount: count
+    })
   }
 }
