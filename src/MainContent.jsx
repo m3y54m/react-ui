@@ -109,8 +109,12 @@ export default class MainContent extends Component {
           /* Each child in a list should have a unique "key" prop. */
           <tr key={cust.id}>
             <td>{cust.id}</td>
-            <td><img src={cust.photo} alt="random"/></td>
-            <td>{cust.name}</td>
+            <td><img src={cust.photo} alt="random" /></td>
+            <td style={{
+              backgroundColor: (cust.name.startsWith('S')) ? "green" : "red",
+            }}>
+              {cust.name}
+            </td>
             <td>{this.getPhoneToRender(cust.phone)}</td>
             <td>{cust.addr.city}</td>
           </tr>
