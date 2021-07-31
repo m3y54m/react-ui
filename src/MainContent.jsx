@@ -70,19 +70,7 @@ export default class MainContent extends Component {
             </tr>
           </thead>
           <tbody>
-            {
-              this.state.customers.map((cust) => {
-                return (
-                  /* Each child in a list should have a unique "key" prop. */
-                  <tr key={cust.id}>
-                    <td>{cust.id}</td>
-                    <td>{cust.name}</td>
-                    <td>{this.getPhoneToRender(cust.phone)}</td>
-                    <td>{cust.addr.city}</td>
-                  </tr>
-                );
-              })
-            }
+            {this.getCustomerRows()}
           </tbody>
         </Table>
       </div>
@@ -107,5 +95,21 @@ export default class MainContent extends Component {
     } else {
       return phone;
     }
+  }
+
+  getCustomerRows = () => {
+    return (
+      this.state.customers.map((cust) => {
+        return (
+          /* Each child in a list should have a unique "key" prop. */
+          <tr key={cust.id}>
+            <td>{cust.id}</td>
+            <td>{cust.name}</td>
+            <td>{this.getPhoneToRender(cust.phone)}</td>
+            <td>{cust.addr.city}</td>
+          </tr>
+        );
+      })
+    );
   }
 }
