@@ -51,8 +51,8 @@ export default class MainContent extends Component {
   }
 
   customerNameStyle = (name) => {
-    if (name.startsWith("S")) return {backgroundColor: "green"};
-    else if (name.startsWith("L")) return {backgroundColor: "red"};
+    if (name.startsWith("S")) return { backgroundColor: "green" };
+    else if (name.startsWith("L")) return { backgroundColor: "red" };
     else return {};
   }
 
@@ -88,6 +88,9 @@ export default class MainContent extends Component {
     );
   }
 
+  onTestClick = (cust) => {
+    console.log(cust);
+  }
   // Executes when the user clicks on Refresh button
   // Study about Arrow Function in javascript
   onRefreshClick = () => {
@@ -115,7 +118,18 @@ export default class MainContent extends Component {
           /* Each child in a list should have a unique "key" prop. */
           <tr key={cust.id}>
             <td>{cust.id}</td>
-            <td><img src={cust.photo} alt="random" /></td>
+            <td>
+              <img src={cust.photo} alt="random" />
+              <div>
+                <Button variant="secondary"
+                  onClick={
+                    /* Use Arrow-Function to be able to pass arguments to the onClick event handler method */
+                    () => {this.onTestClick(cust);}
+                  }>
+                  Test
+                </Button>
+              </div>
+            </td>
             <td style={this.customerNameStyle(cust.name)}>
               {cust.name}
             </td>
