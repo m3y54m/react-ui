@@ -2,8 +2,8 @@ import React from "react";
 import { Component } from "react";
 // import NavBar component from NavBar.jsx file
 import NavBar from "./NavBar";
-// import MainContent component from MainContent.jsx file
-import MainContent from "./MainContent";
+// import ShoppingCart component from ShoppingCart.jsx file
+import ShoppingCart from "./ShoppingCart";
 
 export default class App extends Component {
   // Every component must have a method called "render"
@@ -11,7 +11,7 @@ export default class App extends Component {
     return (
       <React.Fragment>
         <NavBar />
-        <MainContent />
+        <ShoppingCart />
       </React.Fragment>
     );
   }

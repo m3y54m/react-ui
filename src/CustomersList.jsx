@@ -4,7 +4,7 @@ import { Badge } from "react-bootstrap";
 import { Button } from "react-bootstrap";
 import { Table } from "react-bootstrap";
 
-export default class MainContent extends Component {
+export default class CustomersList extends Component {
 
   // dynamic content
   state = {
