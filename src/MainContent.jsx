@@ -22,7 +22,7 @@ export default class MainContent extends Component {
       {
         id: 2,
         name: "Wiscott",
-        phone: "765-455",
+        phone: null,
         addr: {
           city: "Old York"
         }
@@ -77,7 +77,7 @@ export default class MainContent extends Component {
                   <tr key={cust.id}>
                     <td>{cust.id}</td>
                     <td>{cust.name}</td>
-                    <td>{cust.phone}</td>
+                    <td>{cust.phone == null ? "Not Available" : cust.phone}</td>
                     <td>{cust.addr.city}</td>
                   </tr>
                 );
